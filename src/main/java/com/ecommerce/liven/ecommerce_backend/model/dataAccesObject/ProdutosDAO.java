@@ -8,4 +8,5 @@ import java.util.Optional;
 public interface ProdutosDAO extends ListCrudRepository<Produto, Long> {
 
     Optional<Produto> findByNameIgnoreCase(String name);
+    Optional<Produto> findBySku(String sku);
 }

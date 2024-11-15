@@ -19,15 +19,16 @@ public class Produto {
     @Column(name = "price", nullable = false)
     private Double price;
 
-    @OneToOne(mappedBy = "produto", cascade = CascadeType.REMOVE, optional = false, orphanRemoval = true)
-    private Armazenamento armazenamento;
 
-    public Armazenamento getArmazenamento() {
-        return armazenamento;
+    @Column(name = "quantidade", nullable = false)
+    private int quantidade;
+
+    public int getQuantidade() {
+        return quantidade;
     }
 
-    public void setArmazenamento(Armazenamento armazenamento) {
-        this.armazenamento = armazenamento;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
     public Double getPrice() {
