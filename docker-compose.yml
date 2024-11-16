@@ -15,7 +15,7 @@ services:
 
   # Serviço para o banco de dados (MySQL)
   mysql:
-    image: mysql:8.0  # Usa a imagem oficial do MySQL
+    image: mysql:9.1  # Usa a imagem oficial do MySQL
     environment:
       MYSQL_ROOT_PASSWORD: 123456  # Senha do usuário root do MySQL
       MYSQL_DATABASE: ecommerce  # Nome do banco de dados a ser criado

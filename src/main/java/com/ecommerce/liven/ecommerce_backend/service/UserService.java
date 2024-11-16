@@ -32,9 +32,6 @@ public class UserService {
 
         user.setName(registrationBody.getName());
         user.setEmail(registrationBody.getEmail());
-        // Senha não encriptada
-        //user.setPassword(registrationBody.getPassword());
-        //Senha encriptada
         user.setPassword(encryptionService.encryptPassword(registrationBody.getPassword()));
         return usuarioLocalDAO.save(user);
     }

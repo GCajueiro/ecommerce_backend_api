@@ -98,6 +98,21 @@
 			<version>3.39.2.0</version> <!-- Use a versão mais recente -->
 		</dependency>
 
+		<!-- Groovy -->
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>3.0.9</version> <!-- Verifique a versão mais recente -->
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Spock Framework -->
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy</artifactId>
+			<version>3.0.9</version> <!-- or 4.x.x -->
+		</dependency>
+
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
@@ -132,6 +147,7 @@
 					<compilerArgument>-parameters</compilerArgument>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 

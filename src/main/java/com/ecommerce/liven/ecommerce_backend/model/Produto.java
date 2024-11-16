@@ -23,6 +23,18 @@ public class Produto {
     @Column(name = "quantidade", nullable = false)
     private int quantidade;
 
+    @ManyToOne
+    @JoinColumn(name = "carrinho_id")
+    private Carrinho carrinho;
+
+    public Carrinho getCarrinho() {
+        return carrinho;
+    }
+
+    public void setCarrinho(Carrinho carrinho) {
+        this.carrinho = carrinho;
+    }
+
     public int getQuantidade() {
         return quantidade;
     }

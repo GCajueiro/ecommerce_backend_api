@@ -23,6 +23,17 @@ public class UsuarioLocal {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @OneToOne(mappedBy = "usuarioLocal", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private Carrinho carrinho;
+
+    public Carrinho getCarrinho() {
+        return carrinho;
+    }
+
+    public void setCarrinho(Carrinho carrinho) {
+        this.carrinho = carrinho;
+    }
+
     public String getName() {
         return name;
     }

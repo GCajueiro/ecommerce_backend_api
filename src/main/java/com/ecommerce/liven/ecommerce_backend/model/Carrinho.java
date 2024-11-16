@@ -13,27 +13,27 @@ public class Carrinho {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "user_id", nullable = false)
-    private UsuarioLocal user;
+    @OneToMany(mappedBy = "carrinho", orphanRemoval = true)
+    private List<Produto> produtos = new ArrayList<>();
 
-    @OneToMany(mappedBy = "carrinho", cascade = CascadeType.REMOVE, orphanRemoval = true)
-    private List<QuantidadeCarrinho> quantidadeCarrinhos = new ArrayList<>();
-
-    public List<QuantidadeCarrinho> getQuantidadeCarrinhos() {
-        return quantidadeCarrinhos;
-    }
-
-    public void setQuantidadeCarrinhos(List<QuantidadeCarrinho> quantidadeCarrinhos) {
-        this.quantidadeCarrinhos = quantidadeCarrinhos;
-    }
+    @OneToOne(optional = false, orphanRemoval = true)
+    @JoinColumn(name = "usuario_local_id", nullable = false, unique = true)
+    private UsuarioLocal usuarioLocal;
 
     public UsuarioLocal getUsuarioLocal() {
-        return user;
+        return usuarioLocal;
     }
 
     public void setUsuarioLocal(UsuarioLocal usuarioLocal) {
-        this.user = usuarioLocal;
+        this.usuarioLocal = usuarioLocal;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
     }
 
     public Long getId() {
