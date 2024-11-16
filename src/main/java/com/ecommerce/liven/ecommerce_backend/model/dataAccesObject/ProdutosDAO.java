@@ -15,5 +15,4 @@ public interface ProdutosDAO extends ListCrudRepository<Produto, Long> {
 
     List<Produto> findByQuantidadeGreaterThan(int quantidade, Pageable pageable);
 
-
 }
