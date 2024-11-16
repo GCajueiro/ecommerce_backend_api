@@ -51,7 +51,7 @@ public class ProdutoController {
         }
     }
 
-    // 2. Método POST para atualizar preço e quantidade do produto
+    // 2. Metodo POST para atualizar preço e quantidade do produto
     @PostMapping("/{sku}/alterar")
     public ResponseEntity<String> alterarProduto(@PathVariable String sku,
                                                  @RequestParam double novoPreco,
